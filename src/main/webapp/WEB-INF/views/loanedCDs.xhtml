@@ -1,0 +1,12 @@
+<h:form xmlns:h="https://jakarta.ee/xml/ns/persistence/orm" xmlns:f="https://jakarta.ee/xml/ns/jakartaee">
+    <h:dataTable value="#{loanController.activeLoans}" var="loan">
+        <h:column>
+            <f:facet name="header">Titre</f:facet>
+            #{loan.cd.title}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Retourner</f:facet>
+            <h:commandButton value="Retourner" action="#{loanController.returnCD(loan.id)}" />
+        </h:column>
+    </h:dataTable>
+</h:form>
